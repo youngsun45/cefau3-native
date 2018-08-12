@@ -1,0 +1,306 @@
+LIBRARY cefau3.dll
+EXPORTS
+
+; cefau3.c
+
+	Cef_Release
+	Cef_WindowMessage
+	Cef_PostQuitMessage
+	Cef_CreateWindowMessage
+	Cef_GetVersion
+	Cef_GetChromiumVersion
+
+; app.c
+	CefApp_Create
+	CefApp_OnBeforeCommandLineProcessing
+	CefApp_OnRegisterCustomSchemes
+	CefApp_GetResourceBundleHandler
+	CefApp_GetBrowserProcessHandler
+	CefApp_GetRenderProcessHandler
+
+	CefExecuteProcess
+	CefInitialize
+	CefShutdown
+	CefDoMessageLoopWork
+	CefRunMessageLoop
+	CefQuitMessageLoop
+	CefSetOSModalLoop
+	CefEnableHighDPISupport
+
+; client.c
+	CefClient_Create
+	CefClient_GetContextMenuHandler
+	CefClient_GetDialogHandler
+	CefClient_GetDisplayHandler
+	CefClient_GetDownloadHandler
+	CefClient_GetDragHandler
+	CefClient_GetFindHandler
+	CefClient_GetFocusHandler
+	CefClient_GetGeolocationHandler
+	CefClient_GetJSDialogHandler
+	CefClient_GetKeyboardHandler
+	CefClient_GetLifeSpanHandler
+	CefClient_GetLoadHandler
+	CefClient_GetRenderHandler
+	CefClient_GetRequestHandler
+	CefClient_OnProcessMessageReceived
+
+; life_span_handler.c
+	CefLifeSpanHandler_Create
+	CefLifeSpanHandler_OnBeforePopup
+	CefLifeSpanHandler_OnAfterCreated
+	CefLifeSpanHandler_DoClose
+	CefLifeSpanHandler_OnBeforeClose
+
+
+
+; browser.c
+	; browser
+	CefBrowser_GetHost
+	CefBrowser_CanGoBack
+	CefBrowser_GoBack
+	CefBrowser_CanGoForward
+	CefBrowser_GoForward
+	CefBrowser_IsLoading
+	CefBrowser_Reload
+	CefBrowser_ReloadIgnoreCache
+	CefBrowser_StopLoad
+	CefBrowser_GetIdentifier
+	CefBrowser_IsSame
+	CefBrowser_IsPopup
+	CefBrowser_HasDocument
+	CefBrowser_GetMainFrame
+	CefBrowser_GetFocusedFrame
+	CefBrowser_GetFrameByident
+	CefBrowser_GetFrame
+	CefBrowser_GetFrameCount
+	CefBrowser_GetFrameIdentifiers
+	CefBrowser_GetFrameNames
+	CefBrowser_SendProcessMessage
+
+	; browser_host
+	CefBrowserHost_GetBrowser
+	CefBrowserHost_CloseBrowser
+	CefBrowserHost_TryCloseBrowser
+	CefBrowserHost_SetFocus
+	CefBrowserHost_GetWindowHandle
+	CefBrowserHost_GetOpenerWindowHandle
+	CefBrowserHost_HasView
+	CefBrowserHost_GetClient
+	CefBrowserHost_GetRequestContext
+	CefBrowserHost_GetZoomLevel
+	CefBrowserHost_SetZoomLevel
+	CefBrowserHost_RunFileDialog
+	CefBrowserHost_StartDownload
+	CefBrowserHost_DownloadImage
+	CefBrowserHost_Print
+	CefBrowserHost_PrintToPDF
+	CefBrowserHost_Find
+	CefBrowserHost_StopFinding
+	CefBrowserHost_ShowDevTools
+	CefBrowserHost_CloseDevTools
+	CefBrowserHost_HasDevTools
+	CefBrowserHost_GetNavigationEntries
+	CefBrowserHost_SetMouseCursorChangeDisabled
+	CefBrowserHost_IsMouseCursorChangeDisabled
+	CefBrowserHost_ReplaceMisspelling
+	CefBrowserHost_AddWordToDictionary
+	CefBrowserHost_IsWindowRenderingDisabled
+	CefBrowserHost_WasResized
+	CefBrowserHost_WasHidden
+	CefBrowserHost_NotifyScreenInfoChanged
+	CefBrowserHost_Invalidate
+	CefBrowserHost_SendKeyEvent
+	CefBrowserHost_SendMouseClickEvent
+	CefBrowserHost_SendMouseMoveEvent
+	CefBrowserHost_SendMouseWheelEvent
+	CefBrowserHost_SendFocusEvent
+	CefBrowserHost_SendCaptureLostEvent
+	CefBrowserHost_NotifyMoveOrResizeStarted
+	CefBrowserHost_GetWindowlessFrameRate
+	CefBrowserHost_SetWindowlessFrameRate
+	CefBrowserHost_ImeSetComposition
+	CefBrowserHost_ImeCommitText
+	CefBrowserHost_ImeFinishComposingText
+	CefBrowserHost_ImeCancelComposition
+	CefBrowserHost_DragTargetDragEnter
+	CefBrowserHost_DragTargetDragOver
+	CefBrowserHost_DragTargetDragLeave
+	CefBrowserHost_DragTargetDrop
+	CefBrowserHost_DragSourceEndedAt
+	CefBrowserHost_DragSourceSystemDragEnded
+	CefBrowserHost_GetVisibleNavigationEntry
+	CefBrowserHost_SetAccessibilityState
+
+	CefBrowserHost_CreateBrowser
+	CefBrowserHost_CreateBrowserSync
+
+; frame.c
+	CefFrame_IsValid
+	CefFrame_Undo
+	CefFrame_Redo
+	CefFrame_Cut
+	CefFrame_Copy
+	CefFrame_Paste
+	CefFrame_Delete
+	CefFrame_SelectAll
+	CefFrame_ViewSource
+	CefFrame_GetSource
+	CefFrame_GetText
+	CefFrame_LoadRequest
+	CefFrame_LoadUrl
+	CefFrame_LoadString
+	CefFrame_ExecuteJavaScript
+	CefFrame_IsMain
+	CefFrame_IsFocused
+	CefFrame_GetName
+	CefFrame_GetIdentifier
+	CefFrame_GetParent
+	CefFrame_GetUrl
+	CefFrame_GetBrowser
+	CefFrame_GetV8Context
+	CefFrame_VisitDOM
+
+
+
+	; string
+	CefString_Create
+	CefString_Free
+	CefString_Read
+	CefString_Len
+
+; types.c
+	; settings
+	CefSettings_Create
+	CefSettings_Set_browser_subprocess_path
+	CefSettings_Get_browser_subprocess_path
+	CefSettings_Set_framework_dir_path
+	CefSettings_Get_framework_dir_path
+	CefSettings_Set_cache_path
+	CefSettings_Get_cache_path
+	CefSettings_Set_user_data_path
+	CefSettings_Get_user_data_path
+	CefSettings_Set_user_agent
+	CefSettings_Get_user_agent
+	CefSettings_Set_product_version
+	CefSettings_Get_product_version
+	CefSettings_Set_locale
+	CefSettings_Get_locale
+	CefSettings_Set_log_file
+	CefSettings_Get_log_file
+	CefSettings_Set_javascript_flags
+	CefSettings_Get_javascript_flags
+	CefSettings_Set_resources_dir_path
+	CefSettings_Get_resources_dir_path
+	CefSettings_Set_locales_dir_path
+	CefSettings_Get_locales_dir_path
+	CefSettings_Set_accept_language_list
+	CefSettings_Get_accept_language_list
+
+	; browser_settings
+	CefBrowserSettings_Create
+	CefBrowserSettings_Set_standard_font_family
+	CefBrowserSettings_Get_standard_font_family
+	CefBrowserSettings_Set_fixed_font_family
+	CefBrowserSettings_Get_fixed_font_family
+	CefBrowserSettings_Set_serif_font_family
+	CefBrowserSettings_Get_serif_font_family
+	CefBrowserSettings_Set_sans_serif_font_family
+	CefBrowserSettings_Get_sans_serif_font_family
+	CefBrowserSettings_Set_cursive_font_family
+	CefBrowserSettings_Get_cursive_font_family
+	CefBrowserSettings_Set_fantasy_font_family
+	CefBrowserSettings_Get_fantasy_font_family
+	CefBrowserSettings_Set_default_encoding
+	CefBrowserSettings_Get_default_encoding
+	CefBrowserSettings_Set_accept_language_list
+	CefBrowserSettings_Get_accept_language_list
+
+
+
+
+; types_win.c
+	; window_info
+	CefWindowInfo_Create
+	CefWindowInfo_Set_window_name
+	CefWindowInfo_Set_window_name
+
+	; main_args
+	CefMainArgs_Create
+
+	BrowserHost
+
+
+; display_handler.c
+	CefDisplayHandler_Create
+	CefDisplayHandler_OnAddressChange
+	CefDisplayHandler_OnTitleChange
+	CefDisplayHandler_OnFaviconUrlChange
+	CefDisplayHandler_OnFullscreenModeChange
+	CefDisplayHandler_OnTooltip
+	CefDisplayHandler_OnStatusMessage
+	CefDisplayHandler_OnConsoleMessage
+
+; keyboard_handler
+	CefKeyboardHandler_Create
+	CefKeyboardHandler_OnPreKeyEvent
+	CefKeyboardHandler_OnKeyEvent
+
+; render_process_handler
+	CefRenderProcessHandler_Create
+	CefRenderProcessHandler_OnRenderThreadCreated
+	CefRenderProcessHandler_OnWebKitInitialized
+	CefRenderProcessHandler_OnBrowserCreated
+	CefRenderProcessHandler_OnBrowserDestroyed
+	CefRenderProcessHandler_GetLoadHandler
+	CefRenderProcessHandler_OnBeforeNavigation
+	CefRenderProcessHandler_OnContextCreated
+	CefRenderProcessHandler_OnContextReleased
+	CefRenderProcessHandler_OnUncaughtException
+	CefRenderProcessHandler_OnFocusedNodeChanged
+	CefRenderProcessHandler_OnProcessMessageReceived
+
+; ptr.c
+	IntPtr_Set
+	IntPtr_Get
+	LongPtr_Set
+	LongPtr_Get
+	DoublePtr_Set
+	DoublePtr_Get
+
+
+; v8.c
+	CefV8Handler_Create
+	CefV8Handler_Execute
+	CefRegisterExtension
+
+
+	CefV8Value_IsValid
+	CefV8Value_IsUndefined
+	CefV8Value_IsNull
+	CefV8Value_IsBool
+	CefV8Value_IsInt
+	CefV8Value_IsUInt
+	CefV8Value_IsDouble
+	CefV8Value_IsDate
+	CefV8Value_IsString
+	CefV8Value_IsObject
+	CefV8Value_IsArray
+	CefV8Value_IsFunction
+	CefV8Value_IsSame
+	CefV8Value_GetBoolValue
+	CefV8Value_GetIntValue
+	CefV8Value_GetUIntValue
+	CefV8Value_GetDoubleValue
+	CefV8Value_GetDateValue
+	CefV8Value_GetStringValue
+	CefV8Value_IsUserCreated
+
+	CefV8Value_CreateUndefined
+	CefV8Value_CreateNull
+	CefV8Value_CreateBool
+	CefV8Value_CreateInt
+	CefV8Value_CreateUInt
+	CefV8Value_CreateDouble
+	CefV8Value_CreateString
+	CefV8Value_SetReturn
