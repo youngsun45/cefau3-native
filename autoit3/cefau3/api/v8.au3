@@ -139,8 +139,6 @@ func CefV8Value_IsUserCreated($self)
 	return @error ? 0 : $ret[0]
 endfunc
 
-
-
 func CefV8Value_CreateUndefined($value)
 	local $ret = dllcall($__Cefau3Dll__, 'ptr', 'CefV8Value_CreateUndefined')
 	return @error ? 0 : $ret[0]
@@ -177,9 +175,8 @@ func CefV8Value_CreateString($value)
 endfunc
 
 func CefV8Value_SetReturn($V8Value_retval, $V8Value_your_value)
-	local $ret = dllcall($__Cefau3Dll__, 'none', 'CefV8Value_SetReturn', 'ptr*', $V8Value_retval,'ptr', $V8Value_your_value)
+	local $ret = dllcall($__Cefau3Dll__, 'none', 'CefV8Value_SetReturn', 'ptr', $V8Value_retval,'ptr', $V8Value_your_value)
 endfunc
-
 
 ; //////////////////////////////////////////
 ; my addons

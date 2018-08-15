@@ -201,9 +201,9 @@ Func OnWebKitInitialized($RenderProcessHandler)
 		"\n var app;" & _
 		"if (!app) app = {};\n"& _
 		"(function() {" & _
-		"	app.MsgBox = function(title, text) {" & _ ; MsgBox, see at _Execute
-		"		native function MsgBox();" & _
-		"		return MsgBox(title, text);" & _
+		"	app.test = function(s) {" & _ ; MsgBox, see at _Execute
+		"		native function test();" & _
+		"		return test(s ? s.toString() : s);" & _
 		"	};" & _
 		"})();;\n" _
 	)
@@ -220,16 +220,19 @@ Func _Execute($V8Handler, $CefString_name, $V8Value_object, $argumentsCount, $V8
 	Local $name = CefString_Read($CefString_name)
 
 	Switch $name
-		Case 'MsgBox'
+		Case 'test'
 			Local $st_v8v = CefV8ValueArg_ToStruct($V8Value_arguments, $argumentsCount)
 			Local $arg_1 = CefV8ValueArg_Get($st_v8v, 1)
-			Local $arg_2 = CefV8ValueArg_Get($st_v8v, 2)
 
-			If (CefV8Value_IsUndefined($arg_1) or CefV8Value_IsUndefined($arg_2)) then return 0
+			Local $s = 'you call this function with '
 
-			MsgBox(0, CefV8Value_GetStringValue($arg_1), CefV8Value_GetStringValue($arg_2))
+			If CefV8Value_IsUndefined($arg_1) then
+				$s &= 'no param'
+			Else
+				$s &= 'first param is ' & CefV8Value_GetStringValue($arg_1)
+			EndIf
 
-			CefV8Value_SetReturn($V8Value_retval, CefV8Value_CreateDouble(3.41))
+			CefV8Value_SetReturn($V8Value_retval, CefV8Value_CreateString($s))
 
 			Return 1
 
@@ -237,7 +240,7 @@ Func _Execute($V8Handler, $CefString_name, $V8Value_object, $argumentsCount, $V8
 
 	EndSwitch
 
-	Return 0
+	Return 0 ; //
 
 EndFunc
 
