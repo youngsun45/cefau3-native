@@ -17,4 +17,4 @@ src/api/types_win.c  ^
 src/api/v8.c  ^
 src/types/ptr.c ^
 src/types/string.c ^
-libcef.def
+cef/libcef.def
