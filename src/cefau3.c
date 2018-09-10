@@ -5,11 +5,22 @@ HWND __main_window_message = NULL;
 MSG __main_message = {0};
 const wchar_t *__window_message_class = L"Cef.Message";
 
-typedef void(__stdcall * au3_func)();
+typedef void (__stdcall * au3_func)();
+
+//                            
+//  _____     ___         ___ 
+// |     |___|  _|___ _ _|_  |
+// |   --| -_|  _| .'| | |_  |
+// |_____|___|_| |__,|___|___|
+
+//  Chromium Embedded Framework for AutoIt 3
 
 void __stdcall Cef_Release(void *p)
 {
-	if (p) free(p);
+	if (p) {
+		free(p);
+		p = NULL;
+	}
 }
 
 const char * __stdcall Cef_GetVersion()
@@ -26,7 +37,7 @@ void __stdcall Cef_GetChromiumVersion(struct { int v[3]; } *ref)
 
 void __stdcall Cef_WindowMessage()
 {
-	if (!GetMessageW(&__main_message, NULL, 0, 0)) return;
+	GetMessageW(&__main_message, NULL, 0, 0);
 	DispatchMessageW(&__main_message);
 	TranslateMessage(&__main_message);
 }
@@ -57,7 +68,20 @@ HWND __stdcall Cef_CreateWindowMessage()
 		wcex.hInstance = NULL;
 		wcex.lpszClassName = __window_message_class;
 		RegisterClassExW(&wcex);
-		__main_window_message = CreateWindowExW(0, __window_message_class, 0, 0, 0, 0, 0, 0, HWND_MESSAGE, 0, NULL, 0);
+		__main_window_message = CreateWindowExW(
+			0,
+			__window_message_class,
+			0, 
+			0, 
+			0, 
+			0, 
+			0, 
+			0, 
+			HWND_MESSAGE, 
+			0, 
+			NULL, 
+			0
+		);
 	}
 	return __main_window_message;
 }

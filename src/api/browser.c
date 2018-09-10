@@ -590,8 +590,6 @@ int __stdcall CefBrowserHost_CreateBrowser(
 	const struct _cef_browser_settings_t* settings,
 	struct _cef_request_context_t* request_context)
 {
-	;// cef_string_from_wide(cs_url, wcslen(cs_url), &url);
-
 	return cef_browser_host_create_browser(
 		windowInfo,
 		client,

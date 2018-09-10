@@ -75,7 +75,11 @@ void __stdcall CefFrame_LoadString(struct _cef_frame_t* self,
 	const wchar_t* string_val,
 	const wchar_t* url)
 {
-	self->load_string(self, cefstring_pwcs(string_val), cefstring_pwcs(url));
+	self->load_string(
+		self,
+		cefstring_pwcs(string_val), 
+		cefstring_pwcs(url)
+	);
 }
 
 void __stdcall CefFrame_ExecuteJavaScript(struct _cef_frame_t* self,
@@ -83,7 +87,12 @@ void __stdcall CefFrame_ExecuteJavaScript(struct _cef_frame_t* self,
 	const wchar_t* script_url,
 	int start_line)
 {
-	self->execute_java_script(self, cefstring_pwcs(code), cefstring_pwcs(script_url), start_line);;
+	self->execute_java_script(
+		self, 
+		cefstring_pwcs(code), 
+		cefstring_pwcs(script_url), 
+		start_line
+	);
 }
 
 int __stdcall CefFrame_IsMain(struct _cef_frame_t* self)
@@ -98,10 +107,7 @@ int __stdcall CefFrame_IsFocused(struct _cef_frame_t* self)
 
 const wchar_t * __stdcall CefFrame_GetName(struct _cef_frame_t* self)
 {
-	cef_string_userfree_t s =  self->get_name(self);
-	const wchar_t *r = wcsdup(s->str);
-	cef_string_userfree_free(s);
-	return r;
+	return self->get_name(self)->str;
 }
 
 int64 __stdcall CefFrame_GetIdentifier(struct _cef_frame_t* self)
@@ -114,12 +120,9 @@ struct _cef_frame_t* __stdcall CefFrame_GetParent(struct _cef_frame_t* self)
 	return self->get_parent(self);
 }
 
-cef_string_userfree_t __stdcall CefFrame_GetUrl(struct _cef_frame_t* self)
+const wchar_t* __stdcall CefFrame_GetUrl(struct _cef_frame_t* self)
 {
-	cef_string_userfree_t s = self->get_url(self);
-	const wchar_t *r = wcsdup(s->str);
-	cef_string_userfree_free(s);
-	return r;
+	return self->get_url(self)->str;
 }
 
 struct _cef_browser_t* __stdcall CefFrame_GetBrowser(struct _cef_frame_t* self)

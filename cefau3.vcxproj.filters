@@ -64,6 +64,54 @@
     <ClCompile Include="src\api\v8.c">
       <Filter>src\api</Filter>
     </ClCompile>
+    <ClCompile Include="src\api\values.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\download_hadler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\download_item.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\parser.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\load_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\task.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\drag_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\drag_data.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\command_line.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\find_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\focus_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\geolocation.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\geolocation_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\browser_process_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\context_menu_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\dialog_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\cefau3.h">

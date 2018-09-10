@@ -1,5 +1,3 @@
-#include "../cefau3.h"
-
 void __stdcall IntPtr_Set(int *self, int value)
 {
 	*self = value;

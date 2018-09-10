@@ -1,20 +1,35 @@
-tcc -shared -w ^
--D__GNUC__ ^
--I./cef ^
+gcc -shared -w -I./cef ^
 -o cefau3.dll ^
 src/cefau3.c ^
 src/base/base.c ^
 src/base/app.c  ^
 src/base/client.c  ^
-src/api/browser.c  ^
-src/api/display_handler.c  ^
-src/api/frame.c  ^
-src/api/keyboard_handler.c  ^
-src/api/life_span_handler.c  ^
-src/api/render_process_handler.c  ^
-src/api/types.c  ^
-src/api/types_win.c  ^
-src/api/v8.c  ^
+src/api/drag_data.c	 ^
+src/api/load_handler.c ^
+src/api/browser.c	 ^
+src/api/drag_handler.c ^
+src/api/parser.c ^
+src/api/browser_process_handler.c ^
+src/api/find_handler.c ^
+src/api/render_process_handler.c ^
+src/api/command_line.c	 ^
+src/api/focus_handler.c ^
+src/api/task.c ^
+src/api/context_menu_handler.c ^
+src/api/frame.c	 ^
+src/api/types.c ^
+src/api/dialog_handler.c ^
+src/api/geolocation.c ^
+src/api/types_win.c ^
+src/api/display_handler.c ^
+src/api/geolocation_handler.c ^
+src/api/v8.c ^
+src/api/download_hadler.c ^
+src/api/keyboard_handler.c ^
+src/api/values.c ^
+src/api/download_item.c	 ^
+src/api/life_span_handler.c ^
 src/types/ptr.c ^
 src/types/string.c ^
-cef/libcef.def
+src/cefau3.def ^
+-L./cef -llibcef

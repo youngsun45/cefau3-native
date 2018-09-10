@@ -51,6 +51,8 @@ global $__Cefau3DllName__ = 'cefau3.dll'
 #include './api/types.au3'
 #include './api/types_win.au3'
 #include './api/v8.au3'
+#include './api/load_handler.au3'
+
 
 func Cef_Start($CefPath = @ScriptDir & '\cef')
 	dllcall('kernel32.dll', 'int', 'SetCurrentDirectoryW', 'wstr', $CefPath)

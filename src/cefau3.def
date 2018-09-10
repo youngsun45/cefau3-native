@@ -2,7 +2,6 @@ LIBRARY cefau3.dll
 EXPORTS
 
 ; cefau3.c
-
 	Cef_Release
 	Cef_WindowMessage
 	Cef_PostQuitMessage
@@ -216,9 +215,6 @@ EXPORTS
 	CefBrowserSettings_Set_accept_language_list
 	CefBrowserSettings_Get_accept_language_list
 
-
-
-
 ; types_win.c
 	; window_info
 	CefWindowInfo_Create
@@ -227,9 +223,6 @@ EXPORTS
 
 	; main_args
 	CefMainArgs_Create
-
-	BrowserHost
-
 
 ; display_handler.c
 	CefDisplayHandler_Create
@@ -260,7 +253,7 @@ EXPORTS
 	CefRenderProcessHandler_OnFocusedNodeChanged
 	CefRenderProcessHandler_OnProcessMessageReceived
 
-; ptr.c
+	; ptr.c
 	IntPtr_Set
 	IntPtr_Get
 	LongPtr_Set
@@ -268,13 +261,35 @@ EXPORTS
 	DoublePtr_Set
 	DoublePtr_Get
 
-
-; v8.c
+	; v8.c
+	CefV8Context_GetTaskRunner
+	CefV8Context_IsValid
+	CefV8Context_get_browser
+	CefV8Context_get_frame
+	CefV8Context_get_global
+	CefV8Context_enter
+	CefV8Context_exit
+	CefV8Context_is_same
+	CefV8Context_eval
+	CefV8ContextGetCurrentContext
+	CefV8contextGetEnteredContext
+	CefV8contextInContext
 	CefV8Handler_Create
 	CefV8Handler_Execute
-	CefRegisterExtension
-
-
+	CefV8Accessor_Get
+	CefV8Accessor_Set
+	CefV8Interceptor_GetByName
+	CefV8Interceptor_GetByindex
+	CefV8Interceptor_SetByname
+	CefV8Interceptor_SetByIndex
+	CefV8Exception_GetMessage
+	CefV8Exception_GetSourceLine
+	CefV8Exception_GetScriptResourceName
+	CefV8Exception_GetLineNumber
+	CefV8Exception_GetStartPosition
+	CefV8Exception_GetEndPosition
+	CefV8Exception_GetStartColumn
+	CefV8Exception_GetEndColumn
 	CefV8Value_IsValid
 	CefV8Value_IsUndefined
 	CefV8Value_IsNull
@@ -295,12 +310,217 @@ EXPORTS
 	CefV8Value_GetDateValue
 	CefV8Value_GetStringValue
 	CefV8Value_IsUserCreated
-
+	CefV8Value_HasException
+	CefV8Value_GetException
+	CefV8Value_ClearException
+	CefV8Value_WillRethrowExceptions
+	CefV8Value_SetRethrowExceptions
+	CefV8Value_HasValueBykey
+	CefV8Value_HasValueByIndex
+	CefV8Value_DeleteValueByKey
+	CefV8Value_DeleteValueByIndex
+	CefV8Value_GetValueByKey
+	CefV8Value_GetValueByIndex
+	CefV8Value_SetValueByKey
+	CefV8Value_SetValueByIndex
+	CefV8Value_SetValueByAccessor
+	CefV8Value_GetKeys
+	CefV8Value_SetUserData
+	CefV8Value_GetUserData
+	CefV8Value_GetExternallyAllocatedMemory
+	CefV8Value_AdjustExternallyAllocatedMemory
+	CefV8Value_GetArrayLength
+	CefV8Value_GetFunctionName
+	CefV8Value_GetFunctionHandler
+	CefV8Value_ExecuteFunction
+	CefV8Value_ExecuteFunctionWithContext
 	CefV8Value_CreateUndefined
 	CefV8Value_CreateNull
 	CefV8Value_CreateBool
 	CefV8Value_CreateInt
 	CefV8Value_CreateUInt
 	CefV8Value_CreateDouble
+	CefV8Value_CreateDate
 	CefV8Value_CreateString
+	CefV8Value_CreateObject
+	CefV8Value_CreateArray
+	CefV8Value_CreateFunction
 	CefV8Value_SetReturn
+	CefV8StackTrace_IsValid
+	CefV8StackTrace_GetFrameCount
+	CefV8StackTrace_GetFrame
+	CefV8StackFrame_IsValid
+	CefV8StackFrame_GetScriptName
+	CefV8StackFrame_GetScriptNameOrSourceUrl
+	CefV8StackFrame_GetFunctionName
+	CefV8StackFrame_GetLineNumber
+	CefV8StackFrame_GetColumn
+	CefV8StackFrame_IsEval
+	CefV8StackFrame_IsConstructor
+	CefRegisterExtension
+
+	; values.c
+	CefValue_IsValid
+	CefValue_IsOwned
+	CefValue_IsReadOnly
+	CefValue_IsSame
+	CefValue_IsEqual
+	CefValue_Copy
+	CefValue_GetType
+	CefValue_GetBool
+	CefValue_GetInt
+	CefValue_GetDouble
+	CefValue_GetString
+	CefValue_GetBinary
+	CefValue_GetDictionary
+	CefValue_GetList
+	CefValue_SetNull
+	CefValue_SetBool
+	CefValue_SetInt
+	CefValue_SetDouble
+	CefValue_SetString
+	CefValue_SetBinary
+	CefValue_SetDictionary
+	CefValue_SetList
+	CefValue_Create
+
+	; download_handler.c
+	CefBeforeDownloadCallback_Continue
+	CefDownloadItemCallback_Cancel
+	CefDownloadItemCallback_Pause
+	CefDownloadItemCallback_Resume
+	CefDowbloadHandler_New
+	CefDownloadHandler_OnBeforeDownload
+	CefDownloadHandler_OnDownloadUpdated
+
+	; download_item.c
+	CefDownloadItem_IsValid
+	CefDownloadItem_IsInProgress
+	CefDownloadItem_IsComplete
+	CefDownloadItem_IsCanceled
+	CefDownloadItem_GetCurrentSpeed
+	CefDownloadItem_GetPercentComplete
+	CefDownloadItem_GetTotalBytes
+	CefDownloadItem_GetReceivedBytes
+	CefDownloadItem_GetStartTime
+	CefDownloadItem_GetEndTime
+	CefDownloadItem_GetFullPath
+	CefDownloadItem_GetId
+	CefDownloadItem_GetUrl
+	CefDownloadItem_GetOriginalUrl
+	CefDownloadItem_GetSuggestedFileName
+	CefDownloadItem_GetContentDisposition
+	CefDownloadItem_GetMimeType
+
+	; load_handler.c
+	CefLoadHandler_Create
+	CefLoadHandler_OnLoadingStateChange
+	CefLoadHandler_OnLoadStart
+	CefLoadHandler_OnLoadEnd
+	CefLoadHandler_OnLoadError
+
+	; drag_handler.c
+	CefDragHandler_Create
+	CefDragHandler_OnDragEnter
+	CefDragHandler_OnDraggableRegionsChanged
+
+	; drag_data.c
+	CefDragData_Clone
+	CefDragData_IsReadOnly
+	CefDragData_IsLink
+	CefDragData_IsFragment
+	CefDragData_IsFile
+	CefDragData_GetLinkUrl
+	CefDragData_GetLinkTitle
+	CefDragData_GetLinkMetadata
+	CefDragData_GetFragmentText
+	CefDragData_GetFragmentHtml
+	CefDragData_GetFragmentBaseUrl
+	CefDragData_GetFileName
+	CefDragData_GetFileContents
+	CefDragData_GetFileNames
+	CefDragData_SetLinkUrl
+	CefDragData_SetLinkTitle
+	CefDragData_SetLinkMetadata
+	CefDragData_SetFragmentText
+	CefDragData_SetFragmentHtml
+	CefDragData_SetFragmentBaseUrl
+	CefDragData_ResetFileContents
+	CefDragData_AddFile
+	CefDragData_GetImage
+	CefDragData_GetImageHotspot
+	CefDragData_HasImage
+	CefDragData_Create
+
+	; command_line.c
+	CefCommandLine_IsValid
+	CefCommandLine_IsReadOnly
+	CefCommandLine_Copy
+	CefCommandLine_InitFromArgv
+	CefCommandLine_InitFromString
+	CefCommandLine_Reset
+	CefCommandLine_GetArgv
+	CefCommandLine_GetCommandLineString
+	CefCommandLine_GetProgram
+	CefCommandLine_SetProgram
+	CefCommandLine_HasSwitches
+	CefCommandLine_HasSwitch
+	CefCommandLine_GetSwitchValue
+	CefCommandLine_GetSwitches
+	CefCommandLine_AppendSwitch
+	CefCommandLine_AppendSwitchWithValue
+	CefCommandLine_HasArguments
+	CefCommandLine_GetArguments
+	CefCommandLine_AppendArgument
+	CefCommandLine_PrependWrapper
+	CefCommandLine_Create
+	CefCommandLine_GetGlobal
+
+	; find_handler.c
+	CefFindHandler_Create
+	CefFindHandler_OnFindResult
+
+	; focus_handler.c
+	CefFocusHandler_Create
+	CefFocusHandler_OnTakeFocus
+	CefFocusHandler_OnSetFocus
+	CefFocusHandler_OnGotFocus
+
+	; geolocation.c
+	CefGetGeolocationCallback_Create
+	CefGetGeolocation
+
+	; geolocation_handler.c
+	CefGeolocationHandler_Create
+	CefGeolocationHandler_OnRequestGeolocationPermission
+	CefGeolocationHandler_OnCancelGeolocationPermission
+
+	; context_menu_handler.c
+	CefRunContextMenuCallback_Continue
+	CefRunContextMenuCallback_Cancel
+	CefContextMenuHandler_Create
+	CefContextMenuHandler_OnBeforeContextMenu
+	CefContextMenuHandler_RunContextMenu
+	CefContextMenuHandler_OnContextMenuCommand
+	CefContextMenuHandler_OnContextMenuDismissed
+	CefContextMenuParams_GetXCoord
+	CefContextMenuParams_GetYCoord
+	CefContextMenuParams_GetTypeFlags
+	CefContextMenuParams_GetLinkUrl
+	CefContextMenuParams_GetUnfilteredLinkUrl
+	CefContextMenuParams_GetSourceUrl
+	CefContextMenuParams_HasImageContents
+	CefContextMenuParams_GetTitleText
+	CefContextMenuParams_GetPageUrl
+	CefContextMenuParams_GetFrameUrl
+	CefContextMenuParams_GetFrameCharset
+	CefContextMenuParams_GetMediaType
+	CefContextMenuParams_GetMediaStateFlags
+	CefContextMenuParams_GetSelectionText
+	CefContextMenuParams_GetMisspelledWord
+	CefContextMenuParams_GetDictionarySuggestions
+	CefContextMenuParams_IsEditable
+	CefContextMenuParams_IsSpellCheckEnabled
+	CefContextMenuParams_GetEditStateFlags
+	CefContextMenuParams_IsCustomMenu
+	CefContextMenuParams_IsPepperMenu
