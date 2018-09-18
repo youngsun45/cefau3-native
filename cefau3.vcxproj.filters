@@ -112,9 +112,51 @@
     <ClCompile Include="src\api\dialog_handler.c">
       <Filter>src\api</Filter>
     </ClCompile>
+    <ClCompile Include="src\api\jsdialog_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\render_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\request_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\print_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\accessibility_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\resource_bundle_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\request_context_handler.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\cookie.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\dom.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\callback.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\menu_model.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\menu_model_delegate.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
+    <ClCompile Include="src\api\request.c">
+      <Filter>src\api</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\cefau3.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\types.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

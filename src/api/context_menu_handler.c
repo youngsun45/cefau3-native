@@ -27,7 +27,7 @@ void __stdcall CefRunContextMenuCallback_Cancel(struct _cef_run_context_menu_cal
 
 cef_context_menu_handler_t * __stdcall CefContextMenuHandler_Create()
 {
-	size_t sz = sizeof(cef_context_menu_handler_t);
+	u16 sz = sizeof(cef_context_menu_handler_t);
 	cef_context_menu_handler_t *p = calloc(1, sz);
 	p->base.size = sz;
 	return p;

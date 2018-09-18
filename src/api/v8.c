@@ -98,7 +98,7 @@ int __stdcall CefV8contextInContext()
 
 cef_v8handler_t * __stdcall CefV8Handler_Create()
 {
-	size_t sz = sizeof(cef_v8handler_t);
+	u16 sz = sizeof(cef_v8handler_t);
 	cef_v8handler_t *p = calloc(1, sz);
 	p->base.size = sz;
 
@@ -522,7 +522,7 @@ cef_v8handler_t* __stdcall CefV8Value_GetFunctionHandler(
 cef_v8value_t* __stdcall CefV8Value_ExecuteFunction(
 	struct _cef_v8value_t* self,
 	struct _cef_v8value_t* object,
-	size_t argumentsCount,
+	u16 argumentsCount,
 	struct _cef_v8value_t* const* arguments)
 {
 	return self->execute_function(
@@ -537,7 +537,7 @@ cef_v8value_t* __stdcall CefV8Value_ExecuteFunctionWithContext(
 	struct _cef_v8value_t* self,
 	struct _cef_v8context_t* context,
 	struct _cef_v8value_t* object,
-	size_t argumentsCount,
+	u16 argumentsCount,
 	struct _cef_v8value_t* const* arguments)
 {
 	return self->execute_function_with_context(

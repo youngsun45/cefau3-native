@@ -92,13 +92,13 @@ struct _cef_frame_t* CEF_CALLBACK CefBrowser_GetFrame(struct _cef_browser_t* sel
 	return self->get_frame(self, cefstring_pwcs(name));
 }
 
-size_t CEF_CALLBACK CefBrowser_GetFrameCount(struct _cef_browser_t* self)
+u16 CEF_CALLBACK CefBrowser_GetFrameCount(struct _cef_browser_t* self)
 {
 	return self->get_frame_count(self);
 }
 
 void CEF_CALLBACK CefBrowser_GetFrameIdentifiers(struct _cef_browser_t* self,
-	size_t* identifiersCount,
+	u16* identifiersCount,
 	int64* identifiers)
 {
 	return self->get_frame_identifiers(self, identifiersCount, identifiers);
@@ -466,7 +466,7 @@ void CEF_CALLBACK CefBrowserHost_SetWindowlessFrameRate(
 void CEF_CALLBACK CefBrowserHost_ImeSetComposition(
 	struct _cef_browser_host_t* self,
 	const wchar_t* text,
-	size_t underlinesCount,
+	u16 underlinesCount,
 	cef_composition_underline_t const* underlines,
 	const cef_range_t* replacement_range,
 	const cef_range_t* selection_range)

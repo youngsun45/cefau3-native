@@ -2,7 +2,7 @@
 
 cef_window_info_t * __stdcall CefWindowInfo_Create()
 {
-	size_t sz = sizeof(cef_window_info_t);
+	u16 sz = sizeof(cef_window_info_t);
 	cef_window_info_t *p = calloc(1, sz);
 	return p;
 }
@@ -19,7 +19,7 @@ wchar_t * __stdcall CefWindowInfo_Get_window_name(cef_window_info_t *self)
 
 cef_main_args_t * __stdcall CefMainArgs_Create()
 {
-	size_t sz = sizeof(cef_main_args_t);
+	u16 sz = sizeof(cef_main_args_t);
 	cef_main_args_t *p = calloc(1, sz);
 	p->instance = GetModuleHandleA(NULL);
 	return p;

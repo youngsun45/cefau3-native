@@ -2,28 +2,18 @@
 
 #include "include/capi/cef_base_capi.h"
 
-CEF_EXPORT int cef_parse_url(const cef_string_t* url,
-	struct _cef_urlparts_t* parts);
+int __stdcall CefParseUrl(const wchar_t* url,
+	struct _cef_urlparts_t* parts)
+{
+	return cef_parse_url(cefstring_pwcs(url), parts);
+}
 
-///
-// Creates a URL from the specified |parts|, which must contain a non-NULL spec
-// or a non-NULL host and path (at a minimum), but not both. Returns false (0)
-// if |parts| isn't initialized as described.
-///
-CEF_EXPORT int cef_create_url(const struct _cef_urlparts_t* parts,
-	cef_string_t* url);
+int _stdcall CefCreateUrl(const struct _cef_urlparts_t* parts,
+	wchar_t* url)
+{
+	return cef_create_url(parts, cefstring_pwcs(url));
+}
 
-///
-// This is a convenience function for formatting a URL in a concise and human-
-// friendly way to help users make security-related decisions (or in other
-// circumstances when people need to distinguish sites, origins, or otherwise-
-// simplified URLs from each other). Internationalized domain names (IDN) may be
-// presented in Unicode if the conversion is considered safe. The returned value
-// will (a) omit the path for standard schemes, excepting file and filesystem,
-// and (b) omit the port if it is the default for the scheme. Do not use this
-// for URLs which will be parsed or sent to other applications.
-///
-// The resulting string must be freed by calling cef_string_userfree_free().
 CEF_EXPORT cef_string_userfree_t
 cef_format_url_for_security_display(const cef_string_t* origin_url);
 
@@ -49,7 +39,7 @@ CEF_EXPORT void cef_get_extensions_for_mime_type(const cef_string_t* mime_type,
 ///
 // The resulting string must be freed by calling cef_string_userfree_free().
 CEF_EXPORT cef_string_userfree_t cef_base64encode(const void* data,
-	size_t data_size);
+	u16 data_size);
 
 ///
 // Decodes the base64 encoded string |data|. The returned value will be NULL if

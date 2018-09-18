@@ -74,7 +74,7 @@ const wchar_t* __stdcall CefDragData_GetFileName(
 	return self->get_file_name(self)->str;
 }
 
-size_t __stdcall CefDragData_GetFileContents(struct _cef_drag_data_t* self,
+u16 __stdcall CefDragData_GetFileContents(struct _cef_drag_data_t* self,
 	struct _cef_stream_writer_t* writer)
 {
 	return self->get_file_contents(self, writer);

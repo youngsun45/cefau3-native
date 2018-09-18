@@ -26,7 +26,7 @@ void __stdcall CefFileDialogCallback_Cancel(struct _cef_file_dialog_callback_t* 
 
 cef_dialog_handler_t * __stdcall CefDialogHandler_Create()
 {
-	size_t sz = sizeof(cef_dialog_handler_t);
+	u16 sz = sizeof(cef_dialog_handler_t);
 	cef_dialog_handler_t *p = calloc(1, sz);
 	p->base.size = sz;
 	return p;

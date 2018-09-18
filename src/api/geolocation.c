@@ -1,3 +1,4 @@
+#include "../cefau3.h"
 #include "include/capi/cef_geolocation_capi.h"
 
 //              _             _   _         
@@ -8,7 +9,7 @@
 
 cef_get_geolocation_callback_t * __stdcall CefGetGeolocationCallback_Create()
 {
-	size_t sz = sizeof(cef_get_geolocation_callback_t);
+	u16 sz = sizeof(cef_get_geolocation_callback_t);
 	cef_get_geolocation_callback_t *p = calloc(1, sz);
 	p->base.size = sz;
 	return p;

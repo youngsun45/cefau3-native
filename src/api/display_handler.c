@@ -2,7 +2,7 @@
 
 cef_display_handler_t * __stdcall CefDisplayHandler_Create()
 {
-	size_t sz = sizeof(cef_display_handler_t);
+	u16 sz = sizeof(cef_display_handler_t);
 	cef_display_handler_t *p = calloc(1, sz);
 	p->base.size = sz;
 

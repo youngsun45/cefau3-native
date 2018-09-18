@@ -1,3 +1,4 @@
+#include "../cefau3.h"
 #include "include/capi/cef_focus_handler_capi.h"
 
 //  ___                 _             _ _         
@@ -8,7 +9,7 @@
 
 cef_focus_handler_t * __stdcall  CefFocusHandler_Create()
 {
-	size_t sz = sizeof(cef_focus_handler_t);
+	u16 sz = sizeof(cef_focus_handler_t);
 	cef_focus_handler_t *p = calloc(1, sz);
 	p->base.size = sz;
 	return p;

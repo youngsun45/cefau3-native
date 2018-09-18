@@ -6,7 +6,7 @@
 
 cef_load_handler_t * __stdcall CefLoadHandler_Create()
 {
-	size_t sz = sizeof(cef_load_handler_t);
+	u16 sz = sizeof(cef_load_handler_t);
 	cef_load_handler_t *p = calloc(1, sz);
 	p->base.size = sz;
 	return p;

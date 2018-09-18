@@ -19,12 +19,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\api\accessibility_handler.c" />
     <ClCompile Include="src\api\browser.c" />
     <ClCompile Include="src\api\browser_process_handler.c" />
+    <ClCompile Include="src\api\callback.c" />
     <ClCompile Include="src\api\command_line.c" />
     <ClCompile Include="src\api\context_menu_handler.c" />
+    <ClCompile Include="src\api\cookie.c" />
     <ClCompile Include="src\api\dialog_handler.c" />
     <ClCompile Include="src\api\display_handler.c" />
+    <ClCompile Include="src\api\dom.c" />
     <ClCompile Include="src\api\download_hadler.c" />
     <ClCompile Include="src\api\download_item.c" />
     <ClCompile Include="src\api\drag_data.c" />
@@ -34,11 +38,20 @@
     <ClCompile Include="src\api\frame.c" />
     <ClCompile Include="src\api\geolocation.c" />
     <ClCompile Include="src\api\geolocation_handler.c" />
+    <ClCompile Include="src\api\jsdialog_handler.c" />
     <ClCompile Include="src\api\keyboard_handler.c" />
     <ClCompile Include="src\api\life_span_handler.c" />
     <ClCompile Include="src\api\load_handler.c" />
+    <ClCompile Include="src\api\menu_model.c" />
+    <ClCompile Include="src\api\menu_model_delegate.c" />
     <ClCompile Include="src\api\parser.c" />
+    <ClCompile Include="src\api\print_handler.c" />
+    <ClCompile Include="src\api\render_handler.c" />
     <ClCompile Include="src\api\render_process_handler.c" />
+    <ClCompile Include="src\api\request.c" />
+    <ClCompile Include="src\api\request_context_handler.c" />
+    <ClCompile Include="src\api\request_handler.c" />
+    <ClCompile Include="src\api\resource_bundle_handler.c" />
     <ClCompile Include="src\api\task.c" />
     <ClCompile Include="src\api\types.c" />
     <ClCompile Include="src\api\types_win.c" />
@@ -54,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\cefau3.h" />
+    <ClInclude Include="src\types.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\cefau3.def" />

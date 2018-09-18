@@ -17,7 +17,7 @@ wchar_t * __stdcall CefString_Read(cef_string_t *s)
 	return s->str;
 }
 
-size_t __stdcall CefString_Len(cef_string_t *s)
+u16 __stdcall CefString_Len(cef_string_t *s)
 {
 	return s->length;
 }

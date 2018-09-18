@@ -26,7 +26,7 @@ void __stdcall CefDownloadItemCallback_Resume(cef_download_item_callback_t *self
 
 cef_download_handler_t * __stdcall CefDowbloadHandler_New()
 {
-	size_t sz = sizeof(cef_download_handler_t);
+	u16 sz = sizeof(cef_download_handler_t);
 	cef_download_handler_t *p = calloc(1, sz);
 	p->base.size = sz;
 

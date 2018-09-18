@@ -2,7 +2,7 @@
 
 cef_app_t * __stdcall CefApp_Create()
 {
-	size_t sz = sizeof(cef_app_t);
+	u16 sz = sizeof(cef_app_t);
 	cef_app_t *p = calloc(1, sz);
 	p->base.size = sz;
 

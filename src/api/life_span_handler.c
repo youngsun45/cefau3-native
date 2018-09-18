@@ -2,7 +2,7 @@
 
 cef_life_span_handler_t * __stdcall CefLifeSpanHandler_Create()
 {
-	size_t sz = sizeof(cef_life_span_handler_t);
+	u16 sz = sizeof(cef_life_span_handler_t);
 	cef_life_span_handler_t *p = calloc(1, sz);
 	p->base.size = sz;
 

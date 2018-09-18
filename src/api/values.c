@@ -2,12 +2,6 @@
 
 #include "include/capi/cef_base_capi.h"
 
-//  _____     _         
-// |  |  |___| |_ _ ___ 
-// |  |  | .'| | | | -_|
-//  \___/|__,|_|___|___|
-//=======================
-
 int __stdcall CefValue_IsValid(struct _cef_value_t* self)
 {
 	return self->is_valid(self);
@@ -165,15 +159,15 @@ struct _cef_binary_value_t* __stdcall CefBinaryValue_Copy(
 	return self->copy(self);
 }
 
-size_t __stdcall CefBinaryValue_GetSize(struct _cef_binary_value_t* self)
+u16 __stdcall CefBinaryValue_GetSize(struct _cef_binary_value_t* self)
 {
 	return self->get_size(self);
 }
 
-size_t __stdcall CefBinaryValue_GetData(struct _cef_binary_value_t* self,
+u16 __stdcall CefBinaryValue_GetData(struct _cef_binary_value_t* self,
 	void* buffer,
-	size_t buffer_size,
-	size_t data_offset)
+	u16 buffer_size,
+	u16 data_offset)
 {
 	return self->get_data(
 		self,
@@ -184,7 +178,7 @@ size_t __stdcall CefBinaryValue_GetData(struct _cef_binary_value_t* self,
 }
 
 cef_binary_value_t * __stdcall CefBinaryValue_Create(const void* data,
-	size_t data_size)
+	u16 data_size)
 {
 	return cef_binary_value_create(data, data_size);
 }
@@ -223,7 +217,7 @@ cef_dictionary_value_t* __stdcall CefDictionaryValue_Copy(
 	return self->copy(self, exclude_empty_children);
 }
 
-size_t __stdcall CefDictionaryValue_GetSize(struct _cef_dictionary_value_t* self)
+u16 __stdcall CefDictionaryValue_GetSize(struct _cef_dictionary_value_t* self)
 {
 	return self->get_size(self);
 }
@@ -416,12 +410,12 @@ struct _cef_list_value_t* __stdcall CefListValue_Copy(struct _cef_list_value_t* 
 	return self->copy(self);
 }
 
-int __stdcall CefListValue_SetSize(struct _cef_list_value_t* self, size_t size)
+int __stdcall CefListValue_SetSize(struct _cef_list_value_t* self, u16 size)
 {
 	return self->set_size(self, size);
 }
 
-size_t __stdcall CefListValue_GetSize(struct _cef_list_value_t* self)
+u16 __stdcall CefListValue_GetSize(struct _cef_list_value_t* self)
 {
 	return self->get_size(self);
 }
@@ -431,118 +425,118 @@ int __stdcall CefListValue_Clear(struct _cef_list_value_t* self)
 	return self->clear(self);
 }
 
-int __stdcall CefListValue_Remove(struct _cef_list_value_t* self, size_t index)
+int __stdcall CefListValue_Remove(struct _cef_list_value_t* self, u16 index)
 {
 	return self->remove(self, index);
 }
 
 cef_value_type_t __stdcall CefListValue_GetType(struct _cef_list_value_t* self,
-	size_t index)
+	u16 index)
 {
 	return self->get_type(self, index);
 }
 
 struct _cef_value_t* __stdcall CefListValue_GetValue(struct _cef_list_value_t* self,
-	size_t index)
+	u16 index)
 {
 	return self->get_value(self, index);
 }
 
-int __stdcall CefListValue_GetBool(struct _cef_list_value_t* self, size_t index)
+int __stdcall CefListValue_GetBool(struct _cef_list_value_t* self, u16 index)
 {
 	return self->get_bool(self, index);
 }
 
-int __stdcall CefListValue_GetInt(struct _cef_list_value_t* self, size_t index)
+int __stdcall CefListValue_GetInt(struct _cef_list_value_t* self, u16 index)
 {
 	return self->get_int(self, index);
 }
 
 double __stdcall CefListValue_GetDouble(struct _cef_list_value_t* self,
-	size_t index)
+	u16 index)
 {
 	return self->get_double(self, index);
 }
 
-const wchar_t *	__stdcall CefListValue_GetString(struct _cef_list_value_t* self, size_t index)
+const wchar_t *	__stdcall CefListValue_GetString(struct _cef_list_value_t* self, u16 index)
 {
 	return self->get_string(self, index)->str;
 }
 
-struct _cef_binary_value_t * __stdcall CefListValue_GetBinary(struct _cef_list_value_t* self, size_t index)
+struct _cef_binary_value_t * __stdcall CefListValue_GetBinary(struct _cef_list_value_t* self, u16 index)
 {
 	return self->get_binary(self, index);
 }
 
 struct _cef_dictionary_value_t* __stdcall CefListValue_GetDictionary(
 	struct _cef_list_value_t* self,
-	size_t index)
+	u16 index)
 {
 	return self->get_dictionary(self, index);
 }
 
 struct _cef_list_value_t *
-	__stdcall CefListValue_GetList(struct _cef_list_value_t* self, size_t index)
+	__stdcall CefListValue_GetList(struct _cef_list_value_t* self, u16 index)
 {
 	return self->get_list(self, index);
 }
 
 int __stdcall CefListValue_SetValue(struct _cef_list_value_t* self,
-	size_t index,
+	u16 index,
 	struct _cef_value_t* value)
 {
 	return self->set_value(self, index, value);
 }
 
-int __stdcall CefListValue_SetNull(struct _cef_list_value_t* self, size_t index)
+int __stdcall CefListValue_SetNull(struct _cef_list_value_t* self, u16 index)
 {
 	return self->set_null(self, index);
 }
 
 int __stdcall CefListValue_SetBool(struct _cef_list_value_t* self,
-	size_t index,
+	u16 index,
 	int value)
 {
 	return self->set_bool(self, index, value);
 }
 
 int __stdcall CefListValue_SetInt(struct _cef_list_value_t* self,
-	size_t index,
+	u16 index,
 	int value)
 {
 	return self->set_int(self, index, value);
 }
 
 int __stdcall CefListValue_SetDouble(struct _cef_list_value_t* self,
-	size_t index,
+	u16 index,
 	double value)
 {
 	return self->set_double(self, index, value);
 }
 
 int __stdcall CefListValue_SetString(struct _cef_list_value_t* self,
-	size_t index,
+	u16 index,
 	const wchar_t* value)
 {
 	return self->set_string(self, index, cefstring_pwcs(value));
 }
 
 int __stdcall CefListValue_SetBinary(struct _cef_list_value_t* self,
-	size_t index,
+	u16 index,
 	struct _cef_binary_value_t* value)
 {
 	return self->set_binary(self, index, value);
 }
 
 int __stdcall CefListValue_SetDictionary(struct _cef_list_value_t* self,
-	size_t index,
+	u16 index,
 	struct _cef_dictionary_value_t* value)
 {
 	return self->set_dictionary(self, index, value);
 }
 
 int __stdcall CefListValue_SetList(struct _cef_list_value_t* self,
-	size_t index,
+	u16 index,
 	struct _cef_list_value_t* value)
 {
 	return self->set_list(self, index, value);

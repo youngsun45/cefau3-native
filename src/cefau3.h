@@ -11,6 +11,7 @@
 #include "include/capi/cef_client_capi.h"
 #include "include/internal/cef_types.h"
 #include "include/cef_version.h"
+#include "types.h"
 
 cef_string_t cefstring_cs(char *);
 cef_string_t cefstring_wcs(wchar_t *);
